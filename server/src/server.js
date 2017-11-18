@@ -1,43 +1,78 @@
 // Open websocket
-const websocket = require ('ws');
-const wss = new websocket({ port: 3000 });
+import * as WebSocket from 'ws';
 
-var currRoomId = 0;
-var userId = 0;
-var iterations = //no. of plays * no. of clients in the whitelist;
-// Ask the user the number of plays?
+let wss;
+let openRooms = {};
 
-wss.on('connection',function connection (ws)) {
-  ws.on('message', function incoming (message)) {
-    var stringSoFar = '';
-    if (currRoomId == 0) {
-      currRoomId = message;
-    }
-    else if (userId == 0) {
-      userId = message;
-    }
-    else {
-      switch (message.substr(0,4)) {
-      case 'MSG:':
-      stringSoFar = stringSoFar + message.split('.',1);
+export function startWebSocket(server) {
+  wss = WebSocket.Server({ server });
+  wss.on('connection', onConnection);
+  wss.on('message', onMessage);
+
+  setInterval(() => {
+    wss.clients.forEach((ws) => {
+      if (!ws.isAlive) return ws.terminate();
+
+      ws.isAlive = false;
+      ws.ping(null, false, true);
+    })
+  }, 10000);
+}
+
+function createNewRoom(room) {
+  openRooms[room.getId()] = room;
+}
+
+function onConnection(ws) {
+  ws.isAlive = true;
+  ws.on('pong', () => {
+    ws.isAlive = true;
+  });
+
+  ws.on('message', (message) => onMessage(ws, message));
+}
+
+function onMessage(ws, message) {
+  const components = message.split(':', 4);
+  const userId = components[0];
+  const roomId = components[1];
+  const command = components[2];
+  const message = components.length > 3 ? components[3] : null;
+
+  const room = openRooms[roomId];
+  if (room == null) {
+    // Room no longer exists
+    return;
+  }
+
+  const clients = room.clients;
+  if (!(userId in clients)) {
+    clients[userId] = ws;
+  }
+
+  var stringSoFar = '';
+  switch (command) {
+    case 'MSG':
       if (message.includes('.')) {
-        switchState(stringSoFar);
-        stringSoFar = '';
+        room.writerFinished(message.split('.')[0]);
+      }
+
+      if (room.isEnabled) {
+
       }
       break;
-      case 'DIS:':
+    case 'DIS':
       switchState(stringSoFar);
       stringSoFar = '';
       break;
+    default :
       // handle errors
-      default :
-    }
   }
 }
 
 function switchState(sentence) {
   ++iterations;
-  if (iterations == 5;) {
+  if (iterations == 5) {
     // End-game
   }
   addSentence(sentence, currRoomId); //from db.js

@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser';
 import express from 'express';
 import http from 'http';
 import { default as setupRoutes } from './router';
+import { startWebSocket } from './server';
 
 // Database setup
 db.init();
@@ -20,11 +21,11 @@ app.use(cookieParser());
 // Server setup
 const port = 3000;
 const server = http.createServer(app);
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
 setupRoutes(app);
+startWebSocket(server);
 
 // Error handling
 function onError(error) {
@@ -55,3 +56,6 @@ function onListening() {
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
   console.log(`Listening on ${bind}`);
 }
+
+// Start server
+server.listen(port);
