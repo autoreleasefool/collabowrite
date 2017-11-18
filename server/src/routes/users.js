@@ -12,6 +12,7 @@ router.post('/signup', async (req, res) => {
     const userId = await db.signup(req.body.username, req.body.password);
     res.send(userId);
   } catch (e) {
+    console.error('Could not sign up user', e);
     res.sendStatus(500);
   }
 });
@@ -21,6 +22,7 @@ router.post('/login', async (req, res) => {
     const userId = await db.login(req.body.username, req.body.password);
     res.send(userId);
   } catch (e) {
+    console.error('Could not log in user', e);
     res.sendStatus(500);
   }
 });
