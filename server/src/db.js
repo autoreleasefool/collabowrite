@@ -42,6 +42,8 @@ export async function createRoom(userId, mode, isPrivate, whitelist, prompt, gen
     genre,
     whitelist: whitelist || [],
     owner: userId,
+    storySoFar: [],
+    contributors: [],
   });
   return roomResult.insertedId;
 }
@@ -54,17 +56,28 @@ export async function getRoom(_id) {
 
 // Get all rooms which a user can access
 export async function getAllRooms(userId) {
-  const rooms = await db.collection('rooms').find({ }).toArray();
+  const rooms = await db.collection('rooms').find({ contributors: { $elemMatch: { $eq: userId }}}).toArray();
   return rooms;
 }
 
 // Returns all the stories by the user in an array
 export async function getAllStories(userId) {
-  var stories = [];
-  var userRooms = db.collection('rooms').find({whitelist: "userId"});
-  for (var room in userRooms) {
-    var story = room.storySoFar.join();
+  const stories = [];
+  const userRooms = await db.collection('rooms').find({ contributors: { $elemMatch: { $eq: userId }}}).toArray();
+  for (const room in userRooms) {
+    const story = room.storySoFar.join();
     stories.push(story);
   }
   return stories;
+}
+
+export async function saveStorySoFar(room) {
+  const roomResult = await db.collections('rooms').findOneAndUpdate({
+    _id: room._roomId,
+  }, {
+    $set: {
+      storySoFar: room.storySoFar,
+      contributors: room.contributors,
+    }
+  });
 }

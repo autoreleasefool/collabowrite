@@ -47,23 +47,23 @@ function onMessage(ws, message) {
 
   const clients = room.clients;
   if (!(userId in clients)) {
-    clients[userId] = ws;
+    room.addWriter(userId, ws);
   }
 
-  var stringSoFar = '';
   switch (command) {
     case 'MSG':
       if (message.includes('.')) {
         room.writerFinished(message.split('.')[0]);
       }
 
-      if (room.isEnabled) {
-
+      if (!room.isEnabled) {
+        room.revealStory();
       }
       break;
     case 'DIS':
-      switchState(stringSoFar);
-      stringSoFar = '';
+      if (room.getActiveWriterId() === userId) {
+        room.writerFinished();
+      }
       break;
     default :
       // handle errors
