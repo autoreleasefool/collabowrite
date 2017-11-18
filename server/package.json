@@ -4,6 +4,7 @@
   "description": "A collaborative writing platform",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./src/index.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +18,19 @@
   },
   "homepage": "https://github.com/josephroque/collabowrite#readme",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-shopify": "^16.2.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
-    "mongodb": "^2.2.33"
+    "mongodb": "^2.2.33",
+    "nodemon": "^1.12.1",
+    "promise": "^8.0.1"
+  },
+  "babel": {
+    "presets": [
+      "shopify/node"
+    ]
   }
 }
