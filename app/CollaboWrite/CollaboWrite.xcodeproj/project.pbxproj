@@ -12,6 +12,7 @@
 		CA8B90561FC081BA008E4C78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90541FC081BA008E4C78 /* Main.storyboard */; };
 		CA8B90581FC081BA008E4C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90571FC081BA008E4C78 /* Assets.xcassets */; };
 		CA8B905B1FC081BA008E4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90591FC081BA008E4C78 /* LaunchScreen.storyboard */; };
+		CA8B90641FC09081008E4C78 /* PatrickHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90631FC09081008E4C78 /* PatrickHand.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CA8B90571FC081BA008E4C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8B905A1FC081BA008E4C78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B905C1FC081BA008E4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA8B90631FC09081008E4C78 /* PatrickHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PatrickHand.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		CA8B90441FC081BA008E4C78 = {
 			isa = PBXGroup;
 			children = (
+				CA8B90621FC09076008E4C78 /* Resources */,
 				CA8B904F1FC081BA008E4C78 /* CollaboWrite */,
 				CA8B904E1FC081BA008E4C78 /* Products */,
 			);
@@ -62,6 +65,14 @@
 				CA8B905C1FC081BA008E4C78 /* Info.plist */,
 			);
 			path = CollaboWrite;
+			sourceTree = "<group>";
+		};
+		CA8B90621FC09076008E4C78 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA8B90631FC09081008E4C78 /* PatrickHand.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8B90641FC09081008E4C78 /* PatrickHand.ttf in Resources */,
 				CA8B905B1FC081BA008E4C78 /* LaunchScreen.storyboard in Resources */,
 				CA8B90581FC081BA008E4C78 /* Assets.xcassets in Resources */,
 				CA8B90561FC081BA008E4C78 /* Main.storyboard in Resources */,
@@ -275,6 +287,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3UBRXR267C;
 				INFOPLIST_FILE = CollaboWrite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.josephroque.CollaboWrite;
@@ -289,6 +302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3UBRXR267C;
 				INFOPLIST_FILE = CollaboWrite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.josephroque.CollaboWrite;
