@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="c8s-Df-iWH">
-                                <rect key="frame" x="123" y="269" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="c8s-Df-iWH">
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="sGf-In-bV3"/>
+                                    <constraint firstAttribute="width" constant="150" id="xUA-1W-NnJ"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.68627450980392157" green="0.83529411764705885" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c8s-Df-iWH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="G5I-ZY-GWp"/>
+                            <constraint firstItem="c8s-Df-iWH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RMf-Hq-kfC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
