@@ -14,12 +14,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        for family: String in UIFont.familyNames {
+       /* for family: String in UIFont.familyNames {
             print("\(family)")
-            for names: String in UIFont.fontNamesForFamilyName(family) {
+            for names: String in UIFont.fontNames(forFamilyName:) {
                 print("== \(names)")
             }
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

@@ -60,6 +60,106 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jsA-eX-FeE">
+            <objects>
+                <viewController id="3Nb-62-Vri" customClass="ViewController" customModule="CollaboWrite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XOT-PL-xu8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-ye-Y1n">
+                                <rect key="frame" x="0.0" y="424" width="375" height="33"/>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GmO-xk-ITF">
+                                <rect key="frame" x="112" y="318" width="161" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YcX-80-ZPR">
+                                <rect key="frame" x="112" y="378" width="161" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ppj-PH-lXS">
+                                <rect key="frame" x="117" y="68" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="g3V-BI-QJT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68627450980000004" green="0.83529411760000005" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jp9-po-jdS" firstAttribute="trailing" secondItem="Ppj-PH-lXS" secondAttribute="trailing" constant="108" id="8XQ-3c-MQj"/>
+                            <constraint firstItem="Ppj-PH-lXS" firstAttribute="centerX" secondItem="YcX-80-ZPR" secondAttribute="centerX" id="Cqj-Q5-8Jw"/>
+                            <constraint firstItem="Ppj-PH-lXS" firstAttribute="centerX" secondItem="GmO-xk-ITF" secondAttribute="centerX" id="EFE-Jh-ixg"/>
+                            <constraint firstItem="Ppj-PH-lXS" firstAttribute="top" secondItem="Jp9-po-jdS" secondAttribute="top" constant="48" id="Vk8-0k-fV0"/>
+                            <constraint firstItem="WuW-ye-Y1n" firstAttribute="leading" secondItem="Jp9-po-jdS" secondAttribute="leading" id="ZTS-Mp-ntr"/>
+                            <constraint firstItem="Ppj-PH-lXS" firstAttribute="leading" secondItem="Jp9-po-jdS" secondAttribute="leading" constant="117" id="p6J-0E-okt"/>
+                            <constraint firstItem="Jp9-po-jdS" firstAttribute="trailing" secondItem="WuW-ye-Y1n" secondAttribute="trailing" id="wMi-gA-qSG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jp9-po-jdS"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UqF-P8-uRp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160.8" y="-421.43928035982015"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xdf-t8-8gq">
+            <objects>
+                <viewController id="hN2-iD-oc6" customClass="ViewController" customModule="CollaboWrite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AVl-0C-ZFI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-qv-GzQ">
+                                <rect key="frame" x="112" y="60" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="uH0-pI-Phd"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7gZ-e5-CbU">
+                                <rect key="frame" x="0.0" y="424" width="375" height="33"/>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2gl-nj-1CK">
+                                <rect key="frame" x="112" y="318" width="161" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-Cf-sVD">
+                                <rect key="frame" x="112" y="378" width="161" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68627450980000004" green="0.83529411760000005" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kaa-qv-GzQ" firstAttribute="leading" secondItem="2gl-nj-1CK" secondAttribute="leading" id="7FW-ok-Nb8"/>
+                            <constraint firstItem="7gZ-e5-CbU" firstAttribute="top" secondItem="fXy-Cf-sVD" secondAttribute="bottom" constant="16" id="87R-aq-7cP"/>
+                            <constraint firstItem="Ym1-5z-Mj3" firstAttribute="trailing" secondItem="2gl-nj-1CK" secondAttribute="trailing" constant="102" id="DIv-fe-skv"/>
+                            <constraint firstItem="fXy-Cf-sVD" firstAttribute="top" secondItem="2gl-nj-1CK" secondAttribute="bottom" constant="30" id="GFN-cq-JX4"/>
+                            <constraint firstItem="kaa-qv-GzQ" firstAttribute="centerX" secondItem="7gZ-e5-CbU" secondAttribute="centerX" id="MMs-RJ-NDE"/>
+                            <constraint firstItem="2gl-nj-1CK" firstAttribute="trailing" secondItem="fXy-Cf-sVD" secondAttribute="trailing" id="V8O-Vh-BKx"/>
+                            <constraint firstItem="kaa-qv-GzQ" firstAttribute="top" secondItem="Ym1-5z-Mj3" secondAttribute="top" constant="40" id="WxS-Sm-yWj"/>
+                            <constraint firstItem="kaa-qv-GzQ" firstAttribute="leading" secondItem="Ym1-5z-Mj3" secondAttribute="leading" constant="112" id="dqB-RW-Wqs"/>
+                            <constraint firstItem="2gl-nj-1CK" firstAttribute="centerY" secondItem="AVl-0C-ZFI" secondAttribute="centerY" id="nbo-vq-hVY"/>
+                            <constraint firstItem="Ym1-5z-Mj3" firstAttribute="bottom" secondItem="7gZ-e5-CbU" secondAttribute="bottom" constant="210" id="oFc-oP-9Rp"/>
+                            <constraint firstItem="7gZ-e5-CbU" firstAttribute="leading" secondItem="AVl-0C-ZFI" secondAttribute="leading" id="ogL-0C-HNX"/>
+                            <constraint firstItem="2gl-nj-1CK" firstAttribute="leading" secondItem="fXy-Cf-sVD" secondAttribute="leading" id="uab-gh-r1t"/>
+                            <constraint firstAttribute="trailing" secondItem="7gZ-e5-CbU" secondAttribute="trailing" id="w2o-Lr-Qzp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ym1-5z-Mj3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z6Y-EB-jIC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="385"/>
+        </scene>
     </scenes>
     <resources>
         <image name="InAppIcon" width="300" height="300"/>

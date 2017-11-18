@@ -57,3 +57,14 @@ export async function getAllRooms(userId) {
   const rooms = await db.collection('rooms').find({ }).toArray();
   return rooms;
 }
+
+// Returns all the stories by the user in an array
+export async function getAllStories(userId) {
+  var stories = [];
+  var userRooms = db.collection('rooms').find({whitelist: "userId"});
+  for (var room in userRooms) {
+    var story = room.storySoFar.join();
+    stories.push(story);
+  }
+  return stories;
+}
