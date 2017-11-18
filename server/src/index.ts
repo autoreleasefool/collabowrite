@@ -15,7 +15,7 @@ process.on('exit', () => {
 // App setup
 const app = express();
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Server setup
@@ -28,7 +28,7 @@ setupRoutes(app);
 startWebSocket(server);
 
 // Error handling
-function onError(error) {
+function onError(error: any): void {
   if (error.syscall !== 'listen') {
     throw error;
   }
@@ -51,7 +51,7 @@ function onError(error) {
 }
 
 // Event listening
-function onListening() {
+function onListening(): void {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
   console.log(`Listening on ${bind}`);
