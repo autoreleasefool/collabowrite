@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CollaboWrite
 //
-//  Created by Joseph Roque on 2017-11-18.
+//  Created by Joseph Roque and Kshitij Gupta on 2017-11-18.
 //  Copyright © 2017 Hack Bestern. All rights reserved.
 //
 
