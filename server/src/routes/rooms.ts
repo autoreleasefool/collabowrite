@@ -3,11 +3,13 @@ import express from 'express';
 
 const router = express.Router();
 
-export default function applyRoomsRouter(app) {
+const ERROR_CODE = 500;
+
+export default function applyRoomsRouter(app: express.Express): void {
   app.use('/rooms', router);
 }
 
-router.post('/create', async (req, res) => {
+router.post('/create', async(req: express.Request, res: express.Response) => {
   try {
     const roomId = await db.createRoom(
       req.body.userId,
@@ -15,27 +17,27 @@ router.post('/create', async (req, res) => {
       req.body.isPrivate,
       req.body.whitelist,
       req.body.prompt,
-      req.body.genre,
+      req.body.genre
     );
 
     res.send(roomId);
   } catch (e) {
     console.error('Could not create room', e);
-    res.sendStatus(500);
+    res.sendStatus(ERROR_CODE);
   }
 });
 
-router.get('/all', async (req, res) => {
+router.get('/all', async(req: express.Request, res: express.Response) => {
   try {
     const rooms = await db.getAllRooms(req.body.userId);
 
-    roomTypes = {
-      'genres': [],
-      'private': [],
-      'rooms': [],
-    }
+    const roomTypes = {
+      genres: [],
+      private: [],
+      rooms: [],
+    };
 
-    for (const room in rooms) {
+    for (const room of rooms) {
       delete room.whitelist;
 
       if (room.isPrivate) {
@@ -43,7 +45,7 @@ router.get('/all', async (req, res) => {
       }
 
       if (!(room.genre in roomTypes.genres)) {
-        roomTypes[room.genre] = []
+        roomTypes[room.genre] = [];
       }
 
       roomTypes[room.genre].push(room._id);
@@ -52,6 +54,6 @@ router.get('/all', async (req, res) => {
     res.send(rooms);
   } catch (e) {
     console.error(`Could not get rooms for ${req.body.userId}`, e);
-    res.sendStatus(500);
+    res.sendStatus(ERROR_CODE);
   }
 });

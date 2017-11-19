@@ -4,7 +4,10 @@
   "description": "A collaborative writing platform",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.js --exec babel-node",
+    "build": "yarn run clean && yarn run tsc",
+    "clean": "rimraf artifacts",
+    "start": "yarn run build -w",
+    "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,19 +21,18 @@
   },
   "homepage": "https://github.com/josephroque/collabowrite#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-shopify": "^16.2.0",
+    "@types/express": "^4.0.39",
+    "@types/mongodb": "^2.2.15",
+    "@types/node": "^8.0.53",
+    "@types/ws": "^3.2.0",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
-    "nodemon": "^1.12.1",
-    "promise": "^8.0.1"
-  },
-  "babel": {
-    "presets": [
-      "shopify/node"
-    ]
+    "promise": "^8.0.1",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "typescript": "^2.6.1"
   }
 }
