@@ -10,6 +10,9 @@
 		BA8EE6D71FC1405900398286 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6D61FC1405900398286 /* HomeViewController.swift */; };
 		BA8EE6DB1FC14B2900398286 /* getInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6DA1FC14B2900398286 /* getInViewController.swift */; };
 		BA9A1C5C1FC0F20F00FE138F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1C5B1FC0F20F00FE138F /* SignUpViewController.swift */; };
+		CA4C71A21FC1450A004FDB2B /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C71A11FC1450A004FDB2B /* Client.swift */; };
+		CA4C71AF1FC14761004FDB2B /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4C71A91FC1470C004FDB2B /* Starscream.framework */; };
+		CA4C71C41FC14F59004FDB2B /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C71C31FC14F59004FDB2B /* Auth.swift */; };
 		CA8B90511FC081BA008E4C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B90501FC081BA008E4C78 /* AppDelegate.swift */; };
 		CA8B90531FC081BA008E4C78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B90521FC081BA008E4C78 /* ViewController.swift */; };
 		CA8B90561FC081BA008E4C78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90541FC081BA008E4C78 /* Main.storyboard */; };
@@ -18,10 +21,30 @@
 		CA8B90641FC09081008E4C78 /* PatrickHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90631FC09081008E4C78 /* PatrickHand.ttf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CA4C71A81FC1470C004FDB2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA4C71A31FC1470C004FDB2B /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33CCF0921F5DDC030099B092;
+			remoteInfo = Starscream;
+		};
+		CA4C71AA1FC1470C004FDB2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA4C71A31FC1470C004FDB2B /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 335FA2021F5DF71D00F6D2EC;
+			remoteInfo = "Starscream Tests";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		BA8EE6D61FC1405900398286 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		BA8EE6DA1FC14B2900398286 /* getInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getInViewController.swift; sourceTree = "<group>"; };
 		BA9A1C5B1FC0F20F00FE138F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CA4C71A11FC1450A004FDB2B /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		CA4C71A31FC1470C004FDB2B /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = ../../../Starscream/Starscream.xcodeproj; sourceTree = "<group>"; };
+		CA4C71C31FC14F59004FDB2B /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		CA8B904D1FC081BA008E4C78 /* CollaboWrite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollaboWrite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B90501FC081BA008E4C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA8B90521FC081BA008E4C78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,18 +60,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4C71AF1FC14761004FDB2B /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA4C71A41FC1470C004FDB2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C71A91FC1470C004FDB2B /* Starscream.framework */,
+				CA4C71AB1FC1470C004FDB2B /* Starscream Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA4C71AE1FC14761004FDB2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA4C71C21FC14F4B004FDB2B /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CA4C71A11FC1450A004FDB2B /* Client.swift */,
+				CA4C71C31FC14F59004FDB2B /* Auth.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		CA8B90441FC081BA008E4C78 = {
 			isa = PBXGroup;
 			children = (
+				CA4C71A31FC1470C004FDB2B /* Starscream.xcodeproj */,
 				CA8B90621FC09076008E4C78 /* Resources */,
 				CA8B904F1FC081BA008E4C78 /* CollaboWrite */,
 				CA8B904E1FC081BA008E4C78 /* Products */,
+				CA4C71AE1FC14761004FDB2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +116,7 @@
 			children = (
 				CA8B90501FC081BA008E4C78 /* AppDelegate.swift */,
 				CA8B90651FC09479008E4C78 /* ViewControllers */,
+				CA4C71C21FC14F4B004FDB2B /* Util */,
 				CA8B90541FC081BA008E4C78 /* Main.storyboard */,
 				CA8B90571FC081BA008E4C78 /* Assets.xcassets */,
 				CA8B90591FC081BA008E4C78 /* LaunchScreen.storyboard */,
@@ -139,12 +191,35 @@
 			mainGroup = CA8B90441FC081BA008E4C78;
 			productRefGroup = CA8B904E1FC081BA008E4C78 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CA4C71A41FC1470C004FDB2B /* Products */;
+					ProjectRef = CA4C71A31FC1470C004FDB2B /* Starscream.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CA8B904C1FC081BA008E4C78 /* CollaboWrite */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CA4C71A91FC1470C004FDB2B /* Starscream.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Starscream.framework;
+			remoteRef = CA4C71A81FC1470C004FDB2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CA4C71AB1FC1470C004FDB2B /* Starscream Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Starscream Tests.xctest";
+			remoteRef = CA4C71AA1FC1470C004FDB2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CA8B904B1FC081BA008E4C78 /* Resources */ = {
@@ -168,6 +243,9 @@
 				CA8B90511FC081BA008E4C78 /* AppDelegate.swift in Sources */,
 				CA8B90531FC081BA008E4C78 /* ViewController.swift in Sources */,
 				BA8EE6DB1FC14B2900398286 /* getInViewController.swift in Sources */,
+				CA4C71A21FC1450A004FDB2B /* Client.swift in Sources */,
+				BA8EE6D51FC13E0500398286 /* LogInViewController.swift in Sources */,
+				CA4C71C41FC14F59004FDB2B /* Auth.swift in Sources */,
 				BA9A1C5C1FC0F20F00FE138F /* SignUpViewController.swift in Sources */,
 				BA8EE6D71FC1405900398286 /* HomeViewController.swift in Sources */,
 			);
@@ -307,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KD74KHY5W;
+				DEVELOPMENT_TEAM = 3UBRXR267C;
 				INFOPLIST_FILE = CollaboWrite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.josephroque.CollaboWrite;
@@ -322,7 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2KD74KHY5W;
+				DEVELOPMENT_TEAM = 3UBRXR267C;
 				INFOPLIST_FILE = CollaboWrite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.josephroque.CollaboWrite;
