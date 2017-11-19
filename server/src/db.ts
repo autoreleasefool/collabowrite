@@ -77,7 +77,7 @@ export async function createRoom(
   };
 
   const roomResult = await db.collection(COLLECTION_ROOMS).insertOne(newRoom);
-  console.log(`Created new room: ${newRoom}`);
+  console.log(`Created new room: ${JSON.stringify(newRoom)}`);
 
   return roomResult.insertedId;
 }
@@ -85,7 +85,7 @@ export async function createRoom(
 // Get a room, by ID
 export async function getRoom(_id: Mongo.ObjectID): Promise<RoomDocument> {
   const room = await db.collection(COLLECTION_ROOMS).findOne({ _id });
-  console.log(`Retrieved room: ${room}`);
+  console.log(`Retrieved room: ${JSON.stringify(room)}`);
 
   return room;
 }
@@ -104,7 +104,7 @@ export async function getAllRooms(userId: string): Promise<RoomDocument[]> {
   const publicRooms = await db.collection(COLLECTION_ROOMS).find({ isPrivate: false }).toArray();
   const rooms = whiteListedRooms.concat(publicRooms);
 
-  console.log(`Retrieved rooms for user: ${userId}, ${rooms}`);
+  console.log(`Retrieved rooms for user: ${userId}, ${JSON.stringify(rooms)}`);
 
   return rooms;
 }
@@ -122,7 +122,7 @@ export async function getAllStories(userId: Mongo.ObjectID): Promise<string[]> {
     stories.push(story);
   }
 
-  console.log(`Retrieved stories for user: ${userId}, ${stories}`);
+  console.log(`Retrieved stories for user: ${userId}, ${JSON.stringify(stories)}`);
 
   return stories;
 }
@@ -138,7 +138,7 @@ export async function saveStorySoFar(room: Room): Promise<number> {
     },
   });
 
-  console.log(`Saved story for room: ${room}`);
+  console.log(`Saved story for room: ${JSON.stringify(room)}`);
 
   return roomResult.ok;
 }

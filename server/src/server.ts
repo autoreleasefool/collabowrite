@@ -9,7 +9,7 @@ const openRooms = {};
 const HEARTBEAT_EXPIRY = 10000;
 
 export function startWebSocket(server: Server): void {
-  wss = new WebSocket.Server({ server });
+  wss = new WebSocket.Server({ port: 8080 });
   wss.on('connection', onConnection);
   wss.on('message', onMessage);
 
@@ -30,6 +30,7 @@ export function createNewRoom(room: Room): void {
 }
 
 function onConnection(ws: WebSocket): void {
+  console.log('New connection!');
   (ws as any).isAlive = true;
   ws.on('pong', () => {
     (ws as any).isAlive = true;
@@ -39,6 +40,7 @@ function onConnection(ws: WebSocket): void {
 }
 
 function onMessage(ws: WebSocket, message: string): void {
+  console.log(`WebSocket received message: ${message}`);
   // tslint:disable no-magic-numbers
   const components = message.split(':', 4);
   const userId = components[0];
