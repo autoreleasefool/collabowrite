@@ -1,9 +1,9 @@
 import * as db from './db';
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import express from 'express';
-import http from 'http';
-import { default as setupRoutes } from './router';
+import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
+import * as express from 'express';
+import * as http from 'http';
+import { setupRoutes } from './router';
 import { startWebSocket } from './server';
 
 // Database setup

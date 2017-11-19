@@ -4,9 +4,9 @@
   "description": "A collaborative writing platform",
   "main": "index.js",
   "scripts": {
-    "build": "yarn run clean && yarn run tsc",
+    "build": "yarn run clean && yarn run tsc -w",
     "clean": "rimraf artifacts",
-    "start": "yarn run build -w",
+    "start": "nodemon artifacts/index.js",
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,10 +29,12 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "mongodb": "^2.2.33",
+    "nodemon": "^1.12.1",
     "promise": "^8.0.1",
     "rimraf": "^2.6.2",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^4.1.1",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "ws": "^3.3.1"
   }
 }

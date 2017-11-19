@@ -1,4 +1,4 @@
-import { default as Mongo, ObjectID } from 'mongodb';
+import * as Mongo from 'mongodb';
 import Room from './room';
 
 const MongoClient = Mongo.MongoClient;
@@ -14,15 +14,15 @@ export interface UserDocument {
 }
 
 export interface RoomDocument {
-  _id?: ObjectID;
-  contributors: ObjectID[];
+  _id?: Mongo.ObjectID;
+  contributors: Mongo.ObjectID[];
   genre: string;
   isPrivate: boolean;
   mode: number;
-  owner: ObjectID;
+  owner: Mongo.ObjectID;
   prompt: string;
   storySoFar: string[];
-  whitelist: ObjectID[];
+  whitelist: Mongo.ObjectID[];
 }
 
 export async function init(): Promise<void> {
@@ -36,32 +36,34 @@ export function close(): void {
 }
 
 // Sign up, return the id
-export async function signUp(username: string, password: string): Promise<ObjectID> {
+export async function signUp(username: string, password: string): Promise<Mongo.ObjectID> {
   const user = await db.collection(COLLECTION_USERS).findOne({ username });
   if (user) {
     throw Error('Username taken!');
   }
 
   const userResult = await db.collection(COLLECTION_USERS).insertOne({ username, password } as UserDocument);
+  console.log(`Saved new user: ${username}`);
 
   return userResult.insertedId;
 }
 
 // Login, return the user
-export async function logIn(username: string, password: string): Promise<ObjectID> {
+export async function logIn(username: string, password: string): Promise<Mongo.ObjectID> {
   const user = await db.collection(COLLECTION_USERS).findOne({ username, password });
+  console.log(`Logged in user: ${username}`);
 
   return user._id;
 }
 
 // Create a new room
 export async function createRoom(
-    userId: ObjectID,
+    userId: Mongo.ObjectID,
     mode: number,
     isPrivate: boolean,
-    whitelist: ObjectID[],
+    whitelist: Mongo.ObjectID[],
     prompt: string,
-    genre: string): Promise<ObjectID> {
+    genre: string): Promise<Mongo.ObjectID> {
 
   const newRoom: RoomDocument = {
     contributors: [],
@@ -75,26 +77,40 @@ export async function createRoom(
   };
 
   const roomResult = await db.collection(COLLECTION_ROOMS).insertOne(newRoom);
+  console.log(`Created new room: ${newRoom}`);
 
   return roomResult.insertedId;
 }
 
 // Get a room, by ID
-export async function getRoom(_id: ObjectID): Promise<RoomDocument> {
+export async function getRoom(_id: Mongo.ObjectID): Promise<RoomDocument> {
   const room = await db.collection(COLLECTION_ROOMS).findOne({ _id });
+  console.log(`Retrieved room: ${room}`);
 
   return room;
 }
 
 // Get all rooms which a user can access
-export async function getAllRooms(userId: ObjectID): Promise<RoomDocument[]> {
-  const rooms = await db.collection(COLLECTION_ROOMS).find({ contributors: { $elemMatch: { $eq: userId } } }).toArray();
+export async function getAllRooms(userId: string): Promise<RoomDocument[]> {
+  const user = new Mongo.ObjectID(userId);
+  const whiteListedRooms = await db.collection(COLLECTION_ROOMS).find({
+    isPrivate: true,
+    whitelist: {
+      $elemMatch: {
+        $eq: user,
+      },
+    },
+  }).toArray();
+  const publicRooms = await db.collection(COLLECTION_ROOMS).find({ isPrivate: false }).toArray();
+  const rooms = whiteListedRooms.concat(publicRooms);
+
+  console.log(`Retrieved rooms for user: ${userId}, ${rooms}`);
 
   return rooms;
 }
 
 // Returns all the stories by the user in an array
-export async function getAllStories(userId: ObjectID): Promise<string[]> {
+export async function getAllStories(userId: Mongo.ObjectID): Promise<string[]> {
   const stories = [];
   const userRooms = await db.collection(COLLECTION_ROOMS)
       .find({ contributors: { $elemMatch: { $eq: userId } } })
@@ -102,8 +118,11 @@ export async function getAllStories(userId: ObjectID): Promise<string[]> {
 
   for (const room of userRooms) {
     const story = room.storySoFar.join();
+    console.log(story);
     stories.push(story);
   }
+
+  console.log(`Retrieved stories for user: ${userId}, ${stories}`);
 
   return stories;
 }
@@ -118,6 +137,8 @@ export async function saveStorySoFar(room: Room): Promise<number> {
       storySoFar: room.storySoFar,
     },
   });
+
+  console.log(`Saved story for room: ${room}`);
 
   return roomResult.ok;
 }
