@@ -21,6 +21,7 @@
 		CA8B90581FC081BA008E4C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90571FC081BA008E4C78 /* Assets.xcassets */; };
 		CA8B905B1FC081BA008E4C78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90591FC081BA008E4C78 /* LaunchScreen.storyboard */; };
 		CA8B90641FC09081008E4C78 /* PatrickHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA8B90631FC09081008E4C78 /* PatrickHand.ttf */; };
+		CAC295291FC1CA7C006AD93B /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC295281FC1CA7C006AD93B /* Prompt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CA8B905A1FC081BA008E4C78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8B905C1FC081BA008E4C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA8B90631FC09081008E4C78 /* PatrickHand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PatrickHand.ttf; sourceTree = "<group>"; };
+		CAC295281FC1CA7C006AD93B /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				CA4C71C31FC14F59004FDB2B /* Auth.swift */,
+				CAC295281FC1CA7C006AD93B /* Prompt.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				CA8B90511FC081BA008E4C78 /* AppDelegate.swift in Sources */,
 				BA8EE6E31FC1675F00398286 /* EditorViewController.swift in Sources */,
 				BA2935B31FC1C487001E6E8A /* OwnRoomViewController.swift in Sources */,
+				CAC295291FC1CA7C006AD93B /* Prompt.swift in Sources */,
 				CA8B90531FC081BA008E4C78 /* ViewController.swift in Sources */,
 				BA8EE6DB1FC14B2900398286 /* getInViewController.swift in Sources */,
 				BA8EE6DF1FC1673500398286 /* FindRoomViewController.swift in Sources */,

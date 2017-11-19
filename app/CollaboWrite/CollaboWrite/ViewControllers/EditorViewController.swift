@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 class EditorViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var promptField: UILabel!
+    override func viewDidAppear(_ animated: Bool) {
+        promptField.text = Prompt.sharedInstance.lastPrompt
     }
     // back-button
     // no-input state
