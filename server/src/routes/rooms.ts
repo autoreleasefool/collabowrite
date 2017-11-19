@@ -1,5 +1,5 @@
 import * as db from '../db';
-import express from 'express';
+import * as express from 'express';
 
 const router = express.Router();
 
@@ -12,9 +12,9 @@ export default function applyRoomsRouter(app: express.Express): void {
 router.post('/create', async(req: express.Request, res: express.Response) => {
   try {
     const roomId = await db.createRoom(
-      req.body.userId,
+      req.body.user,
       req.body.mode,
-      req.body.isPrivate,
+      req.body.private,
       req.body.whitelist,
       req.body.prompt,
       req.body.genre
@@ -29,7 +29,7 @@ router.post('/create', async(req: express.Request, res: express.Response) => {
 
 router.get('/all', async(req: express.Request, res: express.Response) => {
   try {
-    const rooms = await db.getAllRooms(req.body.userId);
+    const rooms = await db.getAllRooms(req.body.user);
 
     const roomTypes = {
       genres: [],
@@ -53,7 +53,7 @@ router.get('/all', async(req: express.Request, res: express.Response) => {
 
     res.send(rooms);
   } catch (e) {
-    console.error(`Could not get rooms for ${req.body.userId}`, e);
+    console.error(`Could not get rooms for ${req.body.user}`, e);
     res.sendStatus(ERROR_CODE);
   }
 });
