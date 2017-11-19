@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA8EE6D31FC1380C00398286 /* LoadScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6D21FC1380C00398286 /* LoadScreenViewController.swift */; };
-		BA8EE6D51FC13E0500398286 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6D41FC13E0500398286 /* LogInViewController.swift */; };
+		BA8EE6D71FC1405900398286 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6D61FC1405900398286 /* HomeViewController.swift */; };
+		BA8EE6DB1FC14B2900398286 /* getInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8EE6DA1FC14B2900398286 /* getInViewController.swift */; };
 		BA9A1C5C1FC0F20F00FE138F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9A1C5B1FC0F20F00FE138F /* SignUpViewController.swift */; };
 		CA8B90511FC081BA008E4C78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B90501FC081BA008E4C78 /* AppDelegate.swift */; };
 		CA8B90531FC081BA008E4C78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B90521FC081BA008E4C78 /* ViewController.swift */; };
@@ -19,8 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BA8EE6D21FC1380C00398286 /* LoadScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadScreenViewController.swift; sourceTree = "<group>"; };
-		BA8EE6D41FC13E0500398286 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		BA8EE6D61FC1405900398286 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BA8EE6DA1FC14B2900398286 /* getInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getInViewController.swift; sourceTree = "<group>"; };
 		BA9A1C5B1FC0F20F00FE138F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CA8B904D1FC081BA008E4C78 /* CollaboWrite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollaboWrite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8B90501FC081BA008E4C78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,8 +86,8 @@
 			children = (
 				CA8B90521FC081BA008E4C78 /* ViewController.swift */,
 				BA9A1C5B1FC0F20F00FE138F /* SignUpViewController.swift */,
-				BA8EE6D41FC13E0500398286 /* LogInViewController.swift */,
-				BA8EE6D21FC1380C00398286 /* LoadScreenViewController.swift */,
+				BA8EE6DA1FC14B2900398286 /* getInViewController.swift */,
+				BA8EE6D61FC1405900398286 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 			files = (
 				CA8B90511FC081BA008E4C78 /* AppDelegate.swift in Sources */,
 				CA8B90531FC081BA008E4C78 /* ViewController.swift in Sources */,
-				BA8EE6D51FC13E0500398286 /* LogInViewController.swift in Sources */,
+				BA8EE6DB1FC14B2900398286 /* getInViewController.swift in Sources */,
 				BA9A1C5C1FC0F20F00FE138F /* SignUpViewController.swift in Sources */,
-				BA8EE6D31FC1380C00398286 /* LoadScreenViewController.swift in Sources */,
+				BA8EE6D71FC1405900398286 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

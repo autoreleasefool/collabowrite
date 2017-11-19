@@ -16,13 +16,13 @@ class ViewController: UIViewController {
         self.present(signUpScreen, animated: true, completion: nil)
     }
     
-    @IBOutlet weak var LogIn: UIButton!
-    @IBAction func takeToLogin(_ sender: UIButton) {
-        let signUpScreen = self.storyboard!.instantiateViewController(withIdentifier: "LogInViewController")
+    @IBOutlet weak var getIn: UIButton!
+    @IBAction func takeToGetIn(_ sender: UIButton) {
+        let signUpScreen = self.storyboard!.instantiateViewController(withIdentifier: "getInViewController")
         self.present(signUpScreen, animated: true, completion: nil)
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
         // Do any additional setup after loading the view, typically from a nib.

@@ -24,18 +24,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nGG-OQ-t7O">
-                                <rect key="frame" x="112" y="258" width="150" height="150"/>
+                                <rect key="frame" x="112" y="132" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Oaw-AY-Iwe"/>
-                                    <constraint firstAttribute="width" constant="150" id="U6U-le-G0p"/>
+                                    <constraint firstAttribute="height" constant="150" id="IfY-mU-LgB"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-xk-mfb">
-                                <rect key="frame" x="0.0" y="424" width="375" height="65"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-xk-mfb">
+                                <rect key="frame" x="0.0" y="335" width="375" height="92"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AC-Qa-Jdz" userLabel="Sign Up">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
-                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="17"/>
+                                        <rect key="frame" x="152.5" y="0.0" width="70" height="46"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -43,14 +42,14 @@
                                             <action selector="takeToSignUpScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaN-eN-Xjq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nti-V0-1zw" userLabel="Log In">
-                                        <rect key="frame" x="0.0" y="32" width="375" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-Zn-Oct" userLabel="Sign Up">
+                                        <rect key="frame" x="160.5" y="46" width="54" height="46"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="takeToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kaE-JG-P24"/>
+                                            <action selector="takeToGetIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bA-8z-40Z"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -58,17 +57,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.68627450980392157" green="0.83529411764705885" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ndi-xk-mfb" secondAttribute="trailing" id="Qve-PF-nol"/>
-                            <constraint firstItem="nGG-OQ-t7O" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGs-eN-PR6"/>
-                            <constraint firstItem="Ndi-xk-mfb" firstAttribute="top" secondItem="nGG-OQ-t7O" secondAttribute="bottom" constant="16" id="cbA-8p-l7A"/>
-                            <constraint firstItem="Ndi-xk-mfb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6w-VZ-Z8U"/>
-                            <constraint firstItem="nGG-OQ-t7O" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qRP-N6-o8g"/>
+                            <constraint firstItem="nGG-OQ-t7O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="7KW-1j-6d6"/>
+                            <constraint firstItem="nGG-OQ-t7O" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="DoG-Vd-9sf"/>
+                            <constraint firstItem="Ndi-xk-mfb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IIy-1K-Azv"/>
+                            <constraint firstAttribute="trailing" secondItem="Ndi-xk-mfb" secondAttribute="trailing" id="MOj-ON-Fc7"/>
+                            <constraint firstItem="Ndi-xk-mfb" firstAttribute="top" secondItem="nGG-OQ-t7O" secondAttribute="bottom" constant="53" id="dol-Qm-OIe"/>
+                            <constraint firstItem="nGG-OQ-t7O" firstAttribute="centerX" secondItem="Ndi-xk-mfb" secondAttribute="centerX" id="yge-J7-Lra"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="LogIn" destination="Nti-V0-1zw" id="lpS-2I-Wiy"/>
                         <outlet property="SignUp" destination="5AC-Qa-Jdz" id="MGH-Pr-PDC"/>
+                        <outlet property="getIn" destination="jAL-Zn-Oct" id="NsL-6k-D2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -90,16 +90,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WuW-ye-Y1n">
-                                <rect key="frame" x="0.0" y="424.5" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="424.5" width="375" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Jo-bW-Pto" userLabel="Sign Up">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="LoginLoadingScreen:" destination="3Nb-62-Vri" eventType="touchUpInside" id="0s1-yh-jSn"/>
+                                            <action selector="getToHomeScreen:" destination="3Nb-62-Vri" eventType="touchUpInside" id="YFx-R0-c1b"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -135,50 +135,17 @@
                         <viewLayoutGuide key="safeArea" id="Jp9-po-jdS"/>
                     </view>
                     <connections>
-                        <outlet property="SignUp" destination="2Jo-bW-Pto" id="iOa-9e-naK"/>
+                        <outlet property="SignUp" destination="2Jo-bW-Pto" id="Kta-U2-2KQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UqF-P8-uRp" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1160.8" y="-421.43928035982015"/>
         </scene>
-        <!--Load Screen View Controller-->
-        <scene sceneID="9IC-hY-eAm">
-            <objects>
-                <viewController storyboardIdentifier="LoadScreenViewController" id="HiP-Ko-SA2" customClass="LoadScreenViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cxx-eC-gyC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="b7T-Ji-WIl">
-                                <rect key="frame" x="117" y="68" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="W3x-OQ-C2h"/>
-                                </constraints>
-                            </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="XaE-rS-4PZ">
-                                <rect key="frame" x="182" y="323" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.68627450980000004" green="0.83529411760000005" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="b7T-Ji-WIl" firstAttribute="leading" secondItem="oHo-kL-iz9" secondAttribute="leading" constant="117" id="SnC-qM-uad"/>
-                            <constraint firstItem="b7T-Ji-WIl" firstAttribute="top" secondItem="oHo-kL-iz9" secondAttribute="top" constant="48" id="SsH-1Y-0Xn"/>
-                            <constraint firstItem="b7T-Ji-WIl" firstAttribute="centerX" secondItem="XaE-rS-4PZ" secondAttribute="centerX" id="Tg7-IB-Xop"/>
-                            <constraint firstItem="oHo-kL-iz9" firstAttribute="trailing" secondItem="b7T-Ji-WIl" secondAttribute="trailing" constant="108" id="XEO-jq-VMg"/>
-                            <constraint firstItem="XaE-rS-4PZ" firstAttribute="centerY" secondItem="cxx-eC-gyC" secondAttribute="centerY" id="a7G-1F-D11"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="oHo-kL-iz9"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lg3-GT-ypP" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2052" y="34"/>
-        </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="9nR-bh-kvY">
             <objects>
-                <viewController id="rLo-CZ-mn2" customClass="ViewController" customModule="CollaboWrite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="rLo-CZ-mn2" customClass="HomeViewController" customModule="CollaboWrite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TAF-Qw-7IG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,25 +160,25 @@
                                 <rect key="frame" x="68" y="267" width="238" height="185"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAK-YS-d2o">
-                                        <rect key="frame" x="30" y="0.0" width="178" height="62"/>
+                                        <rect key="frame" x="16.5" y="0.0" width="205" height="62"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="62" id="CyJ-oa-NNW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Create Your Own Room">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMC-ba-Ro4">
-                                        <rect key="frame" x="68.5" y="62" width="101" height="62"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="61.5" y="62" width="115" height="62"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Join A Room!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaP-Da-SYE">
-                                        <rect key="frame" x="75" y="124" width="88" height="61"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="66.5" y="124" width="105" height="61"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Your Profile">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -237,12 +204,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDx-mB-7au" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949.5999999999999" y="33.733133433283363"/>
+            <point key="canvasLocation" x="2153" y="34"/>
         </scene>
         <!--LogInViewController-->
         <scene sceneID="ZRJ-NL-yOq">
             <objects>
-                <viewController storyboardIdentifier="LogInViewController" title="LogInViewController" id="1Xf-3R-G3Y" customClass="LogInViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getInViewController" title="LogInViewController" id="1Xf-3R-G3Y" customClass="getInViewController" customModule="CollaboWrite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZQA-jw-ElQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,16 +221,16 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8bj-pS-5d1">
-                                <rect key="frame" x="0.0" y="424.5" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="424.5" width="375" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aae-Sv-R1k">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="46"/>
+                                        <fontDescription key="fontDescription" name="PatrickHand-Regular" family="Patrick Hand" pointSize="25"/>
                                         <state key="normal" title="Log In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="LogInLoad:" destination="1Xf-3R-G3Y" eventType="touchUpInside" id="7J8-fY-8Dg"/>
+                                            <action selector="getToHomeScreen:" destination="1Xf-3R-G3Y" eventType="touchUpInside" id="ACs-Kn-OrD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -299,12 +266,38 @@
                         <viewLayoutGuide key="safeArea" id="9mW-cb-Tie"/>
                     </view>
                     <connections>
-                        <outlet property="LogIn" destination="aae-Sv-R1k" id="hEi-Cl-9xO"/>
+                        <outlet property="getIn" destination="aae-Sv-R1k" id="s7A-qt-b77"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xn-B2-dU5" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1161" y="320"/>
+        </scene>
+        <!--OwnRoomViewController-->
+        <scene sceneID="Kes-WW-StP">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" title="OwnRoomViewController" id="D6o-dH-5ot" customClass="OwnRoomViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ni-LM-8sc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="InAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="bG7-Cc-See">
+                                <rect key="frame" x="212" y="464" width="147" height="107"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.68627450980000004" green="0.83529411760000005" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bG7-Cc-See" firstAttribute="top" secondItem="qri-27-4XI" secondAttribute="top" constant="8" id="Fta-9P-1BK"/>
+                            <constraint firstItem="qri-27-4XI" firstAttribute="trailing" secondItem="bG7-Cc-See" secondAttribute="trailing" constant="154" id="YhP-wl-wJu"/>
+                            <constraint firstItem="bG7-Cc-See" firstAttribute="leading" secondItem="qri-27-4XI" secondAttribute="leading" constant="137" id="g8q-Xf-2fp"/>
+                            <constraint firstItem="qri-27-4XI" firstAttribute="bottom" secondItem="bG7-Cc-See" secondAttribute="bottom" constant="593" id="xWd-Dn-kft"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qri-27-4XI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BQx-DL-hGg" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061.5999999999999" y="-763.26836581709154"/>
         </scene>
     </scenes>
     <resources>
